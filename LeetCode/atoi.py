@@ -24,8 +24,10 @@ def atoi(inp: str) -> int:
 
     num = int(sign + num)
 
-    num = max(num, min_int)
-    num = min(num, max_int)
+    if num > max_int:
+        return max_int
+    elif num < min_int:
+        return min_int
 
     return num
 
@@ -38,8 +40,3 @@ assert atoi('4193 with words') == 4193
 assert atoi('words and 987"') == 0
 assert atoi('-91283472332') == -2147483648
 assert atoi('91283472332') == 2147483647
-
-
-
-
-
